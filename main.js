@@ -22,7 +22,18 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   }
-  console.log(event.target.dataset.link);
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView();
+
+  scrollIntoView(link);
 });
+
+//Handle click on "contact me" button on home
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', () => {
+  scrollIntoView('#contact');
+});
+
+//scrollIntoView를 따로 생성
+function scrollIntoView(selectior) {
+  const scrollTo = document.querySelector(selectior);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+}
