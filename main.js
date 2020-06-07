@@ -36,6 +36,19 @@ document.addEventListener('scroll', () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+// show "arrow up" button when scrooling down
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add('visible');
+  } else {
+    arrowUp.classList.remove('visible');
+  }
+});
+//handle click on the "arrow up" button
+arrowUp.addEventListener('click', () => {
+  scrollIntoView('#home');
+});
 //scrollIntoView를 따로 생성
 function scrollIntoView(selectior) {
   const scrollTo = document.querySelector(selectior);

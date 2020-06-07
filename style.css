@@ -140,6 +140,26 @@ p {
   color: var(--color-white);
   display: none;
 }
+.arrow-up {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  background-color: var(--color-pink);
+  opacity: 0.9;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+  color: var(--color-white);
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 /* Home */
 
 #home {
